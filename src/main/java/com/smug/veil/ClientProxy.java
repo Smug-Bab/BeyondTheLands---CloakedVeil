@@ -1,8 +1,15 @@
 package com.smug.veil;
 
+import com.smug.veil.entity.EntityGorgon;
+import com.smug.veil.model.ModelGorgon;
+import com.smug.veil.render.entity.RenderGorgon;
+
+import cpw.mods.fml.client.registry.RenderingRegistry;
+
 public class ClientProxy extends CommonProxy {
 
-    // Override CommonProxy methods here, if you want a different behaviour on the client (e.g. registering renders).
-    // Don't forget to call the super methods as well.
+    public void registerEntityRenderer() {
+        RenderingRegistry.registerEntityRenderingHandler(EntityGorgon.class, new RenderGorgon(new ModelGorgon(), 1F));
+    }
 
 }
