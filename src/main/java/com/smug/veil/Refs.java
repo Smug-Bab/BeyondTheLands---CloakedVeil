@@ -20,7 +20,7 @@ public class Refs {
 
     @SidedProxy(clientSide = "com.smug.veil.ClientProxy", serverSide = "com.smug.veil.CommonProxy")
     public static CommonProxy proxy;
-    
+
     @Mod.EventHandler
     // preInit "Run before anything else. Read your config, create blocks, items, etc, and register them with the
     // GameRegistry." (Remove if not needed)
