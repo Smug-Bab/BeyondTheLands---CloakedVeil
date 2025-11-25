@@ -10,24 +10,21 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.event.FMLServerStartingEvent;
 
-@Mod(modid = Refs.MODID, version = Tags.VERSION, name = "veil", acceptedMinecraftVersions = "[1.7.10]")
-public class Refs {
+@Mod(modid = InitRefs.MODID, version = Tags.VERSION, name = "veil", acceptedMinecraftVersions = "[1.7.10]")
+public class InitRefs {
 
     public static final String MODID = "veil";
     public static final Logger LOG = LogManager.getLogger(MODID);
-    @Mod.Instance(Refs.MODID)
-    public static Refs instance;
-
     @SidedProxy(clientSide = "com.smug.veil.ClientProxy", serverSide = "com.smug.veil.CommonProxy")
     public static CommonProxy proxy;
+    @Mod.Instance(InitRefs.MODID)
+    public static InitRefs instance;
 
     @Mod.EventHandler
     // preInit "Run before anything else. Read your config, create blocks, items, etc, and register them with the
     // GameRegistry." (Remove if not needed)
     public void preInit(FMLPreInitializationEvent event) {
         proxy.preInit(event);
-        proxy.registerRenderers();
-        proxy.registerEntities();
     }
 
     @Mod.EventHandler
