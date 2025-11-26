@@ -6,9 +6,9 @@ import com.smug.veil.render.entity.RenderGorgon;
 
 import cpw.mods.fml.client.registry.RenderingRegistry;
 
-public class ClientProxy extends CommonProxy {
+public class ClientProxy {
 
-    public void registerRender() {
+    public static void registerRender() {
         RenderingRegistry.registerEntityRenderingHandler(EntityGorgon.class, new RenderGorgon(new ModelGorgon(), 1));
     }
 }

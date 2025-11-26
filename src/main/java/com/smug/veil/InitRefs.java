@@ -16,9 +16,9 @@ public class InitRefs {
     public static final String MODID = "veil";
     public static final Logger LOG = LogManager.getLogger(MODID);
     @SidedProxy(clientSide = "com.smug.veil.ClientProxy", serverSide = "com.smug.veil.CommonProxy")
-    public static CommonProxy proxy;
     @Mod.Instance(InitRefs.MODID)
     public static InitRefs instance;
+    public static CommonProxy proxy;
 
     @Mod.EventHandler
     // preInit "Run before anything else. Read your config, create blocks, items, etc, and register them with the
