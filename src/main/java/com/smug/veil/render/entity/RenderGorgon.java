@@ -9,8 +9,6 @@ import com.smug.veil.InitRefs;
 
 public class RenderGorgon extends RenderLiving {
 
-    private static final ResourceLocation gorgonTextures = new ResourceLocation(InitRefs.MODID + "textures/gorgon.png");
-
     public RenderGorgon(ModelBase model, float f) {
         super(model, f);
     }

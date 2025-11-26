@@ -110,6 +110,41 @@ public class ModelGorgon extends ModelBase {
         this.llarm.setRotationPoint(6.0F, 10.8F, 2.6F);
         this.llarm.addBox(-1.0F, 0.0F, 0.0F, 2, 15, 2, 0.0F);
         this.setRotateAngle(llarm, 0.5235987755982988F, -1.0471975511965976F, -0.17453292519943295F);
+
+        // --- 2. DEFINE HIERARCHY using addChild() ---
+
+        // Torso & Limbs
+        this.upchest.addChild(this.lowchest);
+        this.upchest.addChild(this.ruarm);
+        this.upchest.addChild(this.luarm);
+        this.upchest.addChild(this.lhead);
+
+        // Head/Neck Structure
+        // Assuming lhead is the neck/base, and the rest are snake/jaw parts
+        this.lhead.addChild(this.lhead_1);
+        this.lhead.addChild(this.mljaw_1); // Upper center jaw/snout part
+        this.lhead_1.addChild(this.rujaw); // Upper right jaw/snout part
+        this.lhead_1.addChild(this.lujaw); // Upper left jaw/snout part
+
+        this.lhead.addChild(this.mljaw); // Lower center jaw/snout part
+        this.lhead.addChild(this.rljaw); // Lower right jaw/snout part
+        this.lhead.addChild(this.lljaw); // Lower left jaw/snout part
+
+        // Arm Links
+        this.ruarm.addChild(this.rlarm);
+        this.luarm.addChild(this.llarm);
+
+        // Leg Links (Attached to lowchest for pelvic/lower torso movement)
+        this.lowchest.addChild(this.ruleg);
+        this.lowchest.addChild(this.luleg);
+
+        // Lower Leg Links (Upper Leg -> Lower Leg -> Claw)
+        this.ruleg.addChild(this.rlleg);
+        this.rlleg.addChild(this.rlegclaw);
+
+        this.luleg.addChild(this.llleg);
+        this.llleg.addChild(this.llegclaw);
+
     }
 
     @Override
