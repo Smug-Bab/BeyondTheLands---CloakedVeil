@@ -16,6 +16,6 @@ public class RenderGorgon extends RenderLiving {
     }
 
     protected ResourceLocation getEntityTexture(Entity entity) {
-        return gorgonTextures;
+        return new ResourceLocation(InitRefs.MODID, "textures/gorgon.png");
     }
 }
