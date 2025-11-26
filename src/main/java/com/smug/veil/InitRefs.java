@@ -1,4 +1,4 @@
-	package com.smug.veil;
+package com.smug.veil;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
