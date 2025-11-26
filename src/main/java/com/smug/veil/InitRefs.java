@@ -17,7 +17,7 @@ public class InitRefs {
     public static final Logger LOG = LogManager.getLogger(MODID);
 
     @Mod.Instance(InitRefs.MODID)
-    public static InitRefs instance;
+    public static InitRefs instance;	
 
     @SidedProxy(clientSide = "com.smug.veil.ClientProxy", serverSide = "com.smug.veil.CommonProxy")
     public static CommonProxy proxy;
