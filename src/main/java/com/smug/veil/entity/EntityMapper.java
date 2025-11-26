@@ -9,7 +9,7 @@ public class EntityMapper {
 	registerEntity();
     }
     public static void registerEntity() {
-	createEntity(EntityGorgon.class, "EntityGorgon", 0xf57e42, 0xd48f6c)
+	createEntity(EntityGorgon.class, "EntityGorgon", 0xf57e42, 0xd48f6c);
     }
     
     public static void createEntity(Class entityClass, String entityName, int solidC, int spotC) {
@@ -20,7 +20,7 @@ public class EntityMapper {
 	createEgg(randomId, solidC, spotC);
     }
     
-   private static void createEgg(int randomId), int solidC, int spotC){
-       EntityList.entityEggs.put(Interger.valueOf(randomId), new EntityList.EntityEggInfo(randomId, solidC, spotC))
+   private static void createEgg(int randomId, int solidC, int spotC){
+       EntityList.entityEggs.put(Integer.valueOf(randomId), new EntityList.EntityEggInfo(randomId, solidC, spotC));
    }
 }
